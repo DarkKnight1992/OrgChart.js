@@ -196,7 +196,7 @@ export default class OrgChart {
           return;
         }
         if (this.status === 200) {
-          resolve(JSON.parse(this.response));
+          resolve(this.response);
         } else {
           reject(new Error(this.statusText));
         }
