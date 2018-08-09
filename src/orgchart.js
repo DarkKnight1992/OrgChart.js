@@ -204,7 +204,6 @@ export default class OrgChart {
       xhr.open('GET', url);
       xhr.onreadystatechange = handler;
       xhr.responseType = 'json';
-      // xhr.setRequestHeader('Accept', 'application/json');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send();
     });
