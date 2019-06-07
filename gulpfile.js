@@ -68,7 +68,7 @@ gulp.task('js', ['eslint', 'cleanJS'], function () {
   return gulp.src(['src/*.js'])
     .pipe(sourcemaps.init())
     .pipe(babel(
-      {presets: ['es2015']}
+      {presets: ['env']}
     ))
     .pipe(uglify())
     .pipe(rename('orgchart.min.js'))
@@ -80,7 +80,7 @@ gulp.task('js', ['eslint', 'cleanJS'], function () {
 gulp.task('distjs', ['eslint', 'cleanDistJS'], function () {
   return gulp.src(['src/*.js'])
     .pipe(babel(
-      {presets: ['es2015']}
+      {presets: ['env']}
     ))
     .pipe(uglify())
     .pipe(rename('orgchart.min.js'))
@@ -144,7 +144,7 @@ gulp.task('serve', ['copyVendorAssets', 'webpack'], function () {
           {
             loader: 'babel',
             query: {
-              presets: ['es2015']
+              presets: ['env']
             }
           }
         ]

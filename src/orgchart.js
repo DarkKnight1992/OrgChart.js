@@ -196,7 +196,7 @@ export default class OrgChart {
           return;
         }
         if (this.status === 200) {
-          resolve(JSON.parse(this.response));
+          resolve(this.response);
         } else {
           reject(new Error(this.statusText));
         }
@@ -204,7 +204,6 @@ export default class OrgChart {
       xhr.open('GET', url);
       xhr.onreadystatechange = handler;
       xhr.responseType = 'json';
-      // xhr.setRequestHeader('Accept', 'application/json');
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send();
     });
